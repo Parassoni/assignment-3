@@ -1,0 +1,7 @@
+div {
+    background-color: lightgrey;
+    width: 500px;
+    border: 15px solid green;
+    padding: 25px;
+    margin: 25px;
+  }

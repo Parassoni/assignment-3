@@ -1,0 +1,30 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">NursesOnline</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav drop">
+      <li class="nav-item active">
+       
+      <li   class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          {{Name}}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         <li> <a routerLink='/profile'>{{Name}}</a></li>
+         <li> <a routerLink='/mybooking'>MY BOOKING</a></li>
+         <li> <a routerLink='/faq'>FAQ's</a></li>
+          <li> <a routerLink='/contact'>CONTACT US</a></li>
+            <li> <a (click)="logout()">LOGOUT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<h3><p class="dynamicHeader">{{header}}</p></h3>
+   <router-outlet></router-outlet>
+  <!-- <app-profile></app-profile> -->
+  

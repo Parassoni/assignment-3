@@ -1,0 +1,17 @@
+<form [formGroup]="LoginForm" (ngSubmit)="check()">
+  <div class="login">
+      <input type="email" placeholder="abc@gmail.com" formControlName="username">  
+      <div *ngIf="LoginForm.controls['username'].invalid && (LoginForm.controls['username'].dirty || LoginForm.controls['username'].touched)" class="alert alert-danger">
+          <div *ngIf="LoginForm.controls['username'].errors.required.email">Please Enter User Name</div>
+      </div>   
+    <input type="password" placeholder="Password" formControlName="password">  
+    <div *ngIf="LoginForm.controls['password'].invalid && (LoginForm.controls['password'].dirty || LoginForm.controls['password'].touched)" class="alert alert-danger">
+        <div *ngIf="LoginForm.controls['password'].errors.required">Please Enter Password</div>
+    </div>  
+    <input type="submit" [disabled]="LoginForm.invalid"   value="Log In">
+    <br>
+    New User? <a routerLink="/register">Register</a>
+  </div>
+  <div class="shadow"></div>
+  
+</form>

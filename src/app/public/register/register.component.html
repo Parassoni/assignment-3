@@ -1,0 +1,51 @@
+<form [formGroup]="RegistraionForm"  (ngSubmit)="submit()" >
+    
+      <h1>REGISTER</h1>
+      <div class="grid">
+  <label>FIRST NAME:</label>  
+  <input type="text"  formControlName="firstname"  >
+  <div *ngIf="RegistraionForm.controls['firstname'].invalid && (RegistraionForm.controls['firstname'].dirty || RegistraionForm.controls['firstname'].touched)" class="alert alert-danger">
+      <div *ngIf="RegistraionForm.controls['firstname'].errors.required">First Name is required</div>
+  </div>     
+
+  <label> LAST NAME:</label>
+    <input type="text"  formControlName="lastname" >
+    <div *ngIf="RegistraionForm.controls['lastname'].invalid && (RegistraionForm.controls['lastname'].dirty || RegistraionForm.controls['lastname'].touched)" class="alert alert-danger">
+      <div *ngIf="RegistraionForm.controls['lastname'].errors.required">LastName is required</div>
+  </div>  
+  <label> Email:</label>
+    <input type="email"  formControlName="email">
+    <div *ngIf="RegistraionForm.controls['email'].invalid && (RegistraionForm.controls['email'].dirty || RegistraionForm.controls['email'].touched)" class="alert alert-danger">
+      <div *ngIf="RegistraionForm.controls['email'].errors.required.email">Email is required</div>
+  </div>  
+  <label>PHONE NUMBER:</label>
+    <input type="number" formControlName="phonenumber" minlength="10" maxlength="10">
+    <div *ngIf="RegistraionForm.controls['phonenumber'].invalid && (RegistraionForm.controls['phonenumber'].dirty || RegistraionForm.controls['phonenumber'].touched)" class="alert alert-danger">
+      <div *ngIf="RegistraionForm.controls['phonenumber'].errors.required">Phonenumber is required</div>
+  </div>  
+  <label>ADDRESS:</label>
+    <input type="text" formControlName="address">
+    
+    <div *ngIf="RegistraionForm.controls['address'].invalid && (RegistraionForm.controls['address'].dirty || RegistraionForm.controls['address'].touched)" class="alert alert-danger">
+      <div *ngIf="RegistraionForm.controls['address'].errors.required">Address is required</div>
+  </div>  
+  <label>BRIEF MEDICAL HISTORY(OPTIONAL):</label>
+      <input type="text" formControlName="field">
+  
+      <label>PASSWORD:</label>
+      <input type="password" formControlName="password" >
+      <div *ngIf="RegistraionForm.controls['password'].invalid && (RegistraionForm.controls['password'].dirty || RegistraionForm.controls['password'].touched)" class="alert alert-danger">
+        <div *ngIf="RegistraionForm.controls['password'].errors.required">Password is required</div>
+    </div>
+    <label>CONFIRM PASSWORD:</label>
+      <input type="password" formControlName="confirmpassword" >
+
+ <br>
+ 
+</div>
+
+<input type="submit" [disabled]="RegistraionForm.invalid"value="REGISTER" >
+<br>
+Already a user?<a href="login">login</a>
+<div class="shadow"></div>
+</form>
